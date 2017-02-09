@@ -21,8 +21,7 @@ public class AddressBookController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String newGreeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+    public String newGreeting() {
         return "greeting";
     }
 
