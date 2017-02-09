@@ -10,6 +10,7 @@ import javax.persistence.Id;
 public class BuddyInfo {
 
     private String name;
+    private String address;
 
     @Id
     private String number;
@@ -23,12 +24,26 @@ public class BuddyInfo {
         this.number = number;
     }
 
+    public BuddyInfo(String name, String number, String address) {
+        this.name = name;
+        this.number = number;
+        this.address = address;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getNumber() {
