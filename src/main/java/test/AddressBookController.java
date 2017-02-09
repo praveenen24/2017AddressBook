@@ -20,6 +20,12 @@ public class AddressBookController {
         this.repository = repository;
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String newGreeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
+    }
+
     @RequestMapping(value = "/greeting", method = RequestMethod.GET)
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
